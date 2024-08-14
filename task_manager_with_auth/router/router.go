@@ -18,7 +18,7 @@ func Run() {
 
 	router.POST("/register", controllers.Register)
 	router.POST("/login", controllers.Login)
-	router.POST("/promote/:username", middleware.AuthMiddleware(), middleware.AdminMiddleware(), controllers.Promote)
+	router.PUT("/promote/:username", middleware.AuthMiddleware(), middleware.AdminMiddleware(), controllers.Promote)
 
 	router.Run()
 }
